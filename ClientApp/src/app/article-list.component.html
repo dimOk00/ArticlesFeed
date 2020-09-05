@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="list-group" style="margin-top: 10px;">
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let p of articles">
+      <div class="row">
+        <div class="col-2">
+          <img src="https://www.w3schools.com/bootstrap4/paris.jpg" class="rounded" alt="Cinque Terre"
+               style="height: 100px; width: auto;">
+        </div>
+        <div class="col-8">
+          <h5 class="mb-1">{{p?.heading}}</h5>
+          <p class="mb-1">{{p?.ShortDescription}}</p>
+        </div>
+        <div class="col-2">
+          <div class="d-flex justify-content-end">
+            <p class="text-muted align-items-end">{{p?.date}}</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+

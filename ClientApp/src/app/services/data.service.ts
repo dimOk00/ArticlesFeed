@@ -10,22 +10,22 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getProducts() {
+  getArticles() {
     return this.http.get(this.url);
   }
 
-  getProduct(id: number) {
+  getArticle(id: number) {
     return this.http.get(this.url + '/' + id);
   }
 
-  createProduct(product: Article) {
-    return this.http.post(this.url, product, { observe: 'response' });
+  createArticle(article: Article) {
+    return this.http.post(this.url, article, { observe: 'response' });
   }
-  updateProduct(product: Article) {
+  updateArticle(article: Article) {
 
-    return this.http.put(this.url, product);
+    return this.http.put(this.url, article);
   }
-  deleteProduct(id: number) {
+  deleteArticle(id: number) {
     return this.http.delete(this.url + '/' + id);
   }
 }
