@@ -6,9 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ArticleListComponent } from './article-list.component';
 import { ArticleCreateComponent } from './article-create.component';
 
@@ -18,9 +15,6 @@ import { DataService } from './services/data.service';
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     ArticleListComponent
   ],
   imports: [
@@ -30,8 +24,6 @@ import { DataService } from './services/data.service';
     RouterModule.forRoot([
       { path: '', component: ArticleListComponent },
       { path: 'create', component: ArticleCreateComponent },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent }
     ])
   ],
   providers: [DataService],
