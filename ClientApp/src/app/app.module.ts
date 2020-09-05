@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ArticleListComponent } from './article-list.component';
+import { ArticleCreateComponent } from './article-create.component';
 
 import { DataService } from './services/data.service';
 
@@ -27,7 +28,8 @@ import { DataService } from './services/data.service';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: ArticleListComponent, pathMatch: 'full' },
+      { path: '', component: ArticleListComponent },
+      { path: 'create', component: ArticleCreateComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent }
     ])

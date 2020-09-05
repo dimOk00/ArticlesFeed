@@ -1,19 +1,36 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between" style="margin-top: 10px;">
+    <div></div>
+    <div class="d-flex justify-content-center">
+      <div style="margin-right: 5px;">
+        <input class="form-control" id="myInput" type="text" placeholder="Type your text...">
+      </div>
+      <div>
+        <button type="button" class="btn btn-outline-primary">Filter</button>
+      </div>
+    </div>
+    <div>
+      <button routerLink="/create" type="button" class="btn btn-outline-success" style="align-self: flex-end;">Add article</button>
+    </div>
+  </div>
+</div>
+
 <div class="container">
 
   <div class="list-group" style="margin-top: 10px;">
     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let p of articles">
-      <div class="row">
-        <div class="col-2">
-          <img src="https://www.w3schools.com/bootstrap4/paris.jpg" class="rounded" alt="Cinque Terre"
-               style="height: 100px; width: auto;">
+      <div class="row" style="height: 100px">
+        <div class="col-2 my-auto">
+          <img [src]="p.sourceUrl" class="rounded" alt="Cinque Terre"
+               style="width: 100px;">
         </div>
         <div class="col-8">
           <h5 class="mb-1">{{p?.heading}}</h5>
-          <p class="mb-1">{{p?.ShortDescription}}</p>
+          <p class="mb-1">{{p?.shortDescription}}</p>
         </div>
         <div class="col-2">
           <div class="d-flex justify-content-end">
-            <p class="text-muted align-items-end">{{p?.date}}</p>
+            <p class="text-muted align-items-end">{{p?.date | date}}</p>
           </div>
         </div>
       </div>
