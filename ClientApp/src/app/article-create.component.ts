@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from './services/data.service';
-import { Article } from './models/Article';
+import { Article } from './models/article';
 
 @Component({
   templateUrl: './article-create.component.html'

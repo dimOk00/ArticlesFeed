@@ -15,7 +15,8 @@ import { DataService } from './services/data.service';
   declarations: [
     AppComponent,
     NavMenuComponent,
-    ArticleListComponent
+    ArticleCreateComponent,
+    ArticleListComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

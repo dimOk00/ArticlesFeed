@@ -1,7 +1,33 @@
 <div>
-  <h2>Добавление нового товара</h2>
+  <h2>Create new article</h2>
+
   <div class="form-group">
-    <input type="button" value="Сохранить" (click)="save()" class="btn btn-success" />
-    <a routerLink="/" class="btn btn-warning">Отмена</a>
+    <label>Heading</label>
+    <input type="text" [(ngModel)]="article.heading" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Short decription</label>
+    <input type="text" [(ngModel)]="article.shortDescription" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Content</label>
+    <input type="text" [(ngModel)]="article.content" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input type="date" [(ngModel)]="article.date" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Author</label>
+    <input type="text" [(ngModel)]="article.author" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Image</label>
+    <input type="url" [(ngModel)]="article.sourceUrl" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <input type="button" value="Save" (click)="save()" class="btn btn-success" style="margin-right:10px;" />
+    <a routerLink="/" class="btn btn-warning">Cancel</a>
   </div>
 </div>
