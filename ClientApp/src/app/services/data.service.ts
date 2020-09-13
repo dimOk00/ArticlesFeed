@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Article } from '../models/article';
+import { Filter } from '../models/filter';
+
 
 @Injectable()
 export class DataService {
@@ -10,8 +12,13 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getArticles() {
-    return this.http.get(this.url);
+  getArticles(filter: Filter = null) {
+    if (filter != null) {
+      let params = new HttpParams().set("text", filter.text);
+      return this.http.get(this.url, { params: params});
+    } else {
+      return this.http.get(this.url);
+    }
   }
 
   getArticle(id: number) {

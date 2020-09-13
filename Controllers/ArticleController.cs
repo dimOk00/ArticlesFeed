@@ -29,9 +29,11 @@ namespace ArticlesFeed.Controllers
             }
         }
         [HttpGet]
-        public IAsyncEnumerable<Article> Get()
+        public IAsyncEnumerable<Article> Get([FromQuery]ArticleFilter filter = null)
         {
-            return _db.Articles.AsAsyncEnumerable();
+            return filter == null || string.IsNullOrEmpty(filter.Text) 
+                ? _db.Articles.AsAsyncEnumerable() 
+                : _db.Articles.Where(x => x.Heading.Contains(filter.Text)).AsAsyncEnumerable();
         }
 
         [HttpGet("{id}")]
